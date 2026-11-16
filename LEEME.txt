@@ -1,0 +1,37 @@
+PULSO MOTO — TIENDA ONLINE
+
+
+Proyecto completo con catálogo, cuenta de clientes, carrito, panel de administración y checkout preparado para Mercado Pago.
+
+## Importante: hosting necesario
+Este proyecto **no es un sitio estático**. Para que funcionen carrito, perfil, inicio de sesión, inventario, pedidos y administración, debe ejecutarse el servidor Node.js incluido. No alcanza con subir solamente `public/` a Netlify como sitio estático. Usá un hosting que soporte Node.js, variables de entorno y almacenamiento persistente para SQLite y las imágenes subidas.
+
+## Instalación
+1. Instalá Node.js 20 o superior.
+2. Copiá `.env.example` como `.env`.
+3. Configurá `SESSION_SECRET` (mínimo 32 caracteres aleatorios), `ADMIN_EMAIL` y `ADMIN_PASSWORD` (mínimo 12 caracteres).
+4. Desde esta carpeta ejecutá `npm install`.
+5. Ejecutá `npm start`.
+6. Abrí `http://localhost:3000`.
+
+## Panel de administración
+Ingresá con la cuenta administradora y abrí `/admin.html`. Desde allí podés publicar productos, asignar precio y stock, editar fichas, imágenes y gestionar el estado de entrega de pedidos. Los productos de muestra comienzan sin precio de venta ni stock para evitar cobros por datos ficticios.
+
+## Carrito y pagos
+El carrito guarda cantidades en el navegador y valida precio y stock en el servidor. Para cobrar, configurá `MP_ACCESS_TOKEN` y `MP_WEBHOOK_SECRET` en `.env`, publicá con HTTPS y establecé `PUBLIC_BASE_URL`. Nunca pongas tokens privados en `app.js` o HTML. Hasta que Mercado Pago esté configurado, el checkout informa que no está habilitado.
+
+## WhatsApp
+Configurá `WHATSAPP_NUMBER` en `.env` con código de país y número, sin `+` ni espacios.
+
+## Motos y precios
+La selección incluye Honda Wave 110S, Honda GLH 150, Honda XR150L, Bajaj Rouser NS200 y Royal Enfield Hunter 350. Las imágenes enlazadas en las fichas de motos provienen de los sitios oficiales de sus fabricantes.
+
+Los últimos precios sugeridos Honda visibles en la consulta oficial tienen vigencia publicada del 01/10/2026 al 31/10/2026: Wave 110S $3.529.700, GLH 150 $4.737.600 y XR150L $6.051.500. Se presentan como referencia histórica, no como precio actual confirmado. En las páginas oficiales consultadas de Bajaj y Royal Enfield no encontramos un precio público verificable, por eso se muestra “Consultar precio”. Los importes de Honda no incluyen necesariamente flete, seguro ni patentamiento.
+
+## Accesorios
+El casco corresponde al HJC i11 y utiliza una imagen del sitio oficial HJC. El baúl corresponde al Kappa K45N de 45 litros y utiliza una imagen del catálogo oficial Kappa. Antes de comercializar, verificá talles, compatibilidad, homologaciones y disponibilidad local.
+
+## Antes de publicar
+- Configurá datos comerciales, privacidad, términos, envíos, cambios y devoluciones.
+- Confirmá precios finales y stock con proveedores/concesionarios.
+- Hacé copias de seguridad de `data/` y `public/uploads/`.
